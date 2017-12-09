@@ -12,7 +12,8 @@ fun main(args: Array<String>) {
     //day5()
     //day6()
     //day7()
-    day8()
+    //day8()
+    day9()
 }
 
 private fun day1() {
@@ -88,6 +89,17 @@ private fun day8() {
     println("time in millis: $time")
 }
 
+private fun day9(){
+    val d = Day9()
+    val input = parseInput("src/main/day9/input", OneRowAsStringParser())
+
+    val time = measureTimeMillis {
+        println("Result: ${d.calcPart2(input)}")
+    }
+    println("time in millis: $time")
+
+}
+
 interface RowParser<out T> {
     fun parse(rows: List<String>): T
 }
@@ -110,6 +122,16 @@ class ListOfStringParser: RowParser<List<String>> {
             input.add(it)
         }
         return input
+    }
+}
+
+class OneRowAsStringParser: RowParser<String> {
+    override fun parse(rows: List<String>): String {
+        val input = mutableListOf<String>()
+        rows.forEach {
+            input.add(it)
+        }
+        return rows.get(0)
     }
 }
 
