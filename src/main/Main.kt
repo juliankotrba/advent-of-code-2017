@@ -13,7 +13,8 @@ fun main(args: Array<String>) {
     //day6()
     //day7()
     //day8()
-    day9()
+    //day9()
+    day10()
 }
 
 private fun day1() {
@@ -97,7 +98,17 @@ private fun day9(){
         println("Result: ${d.calcPart2(input)}")
     }
     println("time in millis: $time")
+}
 
+private fun day10() {
+    val d = Day10()
+    val listOfNumbers = (0 .. 255).toMutableList()
+    val sequenceOfLengths = "192,69,168,160,78,1,166,28,0,83,198,2,254,255,41,12"
+
+    val time = measureTimeMillis {
+        println("Result: ${d.calcPart2(listOfNumbers, sequenceOfLengths)}")
+    }
+    println("time in millis: $time")
 }
 
 interface RowParser<out T> {
