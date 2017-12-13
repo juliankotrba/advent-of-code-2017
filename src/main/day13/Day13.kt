@@ -3,40 +3,40 @@
  * @author Julian Kotrba
  */
 
+data class Area(val depth: Int, val range: Int)
+
 class Day13 {
 
-    fun calcPart1(input: List<Int?>): Int {
-        return input.mapIndexed { i, elem ->
-            if (elem != null) {
-                if (i.rem((elem * 2).minus(2)) == 0) {
-                     i * elem
-                } else 0
-            } else 0
-        }.sum()
+    fun calcPart1(input: List<Area>): Int {
 
+        return input.filter {
+            it.depth.rem((it.range.times(2)).minus(2)) == 0
+        }.map {
+            it.depth.times(it.range)
+        }.sum()
     }
 
-    fun calcPart2(input: List<Int?>): Int {
-        var delay = 0
-        var found = false
+    fun calcPart2(input: List<Area>): Int {
+        var delay = -1
+        var isFound = false
 
-        while (!found) {
-            found = true
-
-            for (i in 0 until input.size) {
-                val elem = input[i]
-                val index = i+delay
-                if(elem != null) {
-                    if(index.rem((elem*2).minus(2)) == 0) {
-                        found = false
-                        break
-                    }
-                }
-            }
+        while (!isFound) {
             delay++
+
+            isFound = walkAreasAndStopWhenCaught(input.size, { index ->
+                input[index].depth.plus(delay).rem((input[index].range.times(2)).minus(2)) == 0
+            })
         }
 
-        return --delay
+        return delay
+    }
+
+    private inline fun walkAreasAndStopWhenCaught(times: Int, caught: (Int) -> Boolean): Boolean {
+        for (i in 0 until times) {
+            if (caught(i)) {return false}
+        }
+
+        return true
     }
 }
 

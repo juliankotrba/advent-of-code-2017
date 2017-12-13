@@ -140,15 +140,17 @@ private fun day13() {
 
     val parsedInput: MutableList<Int?> = MutableList(Integer.parseInt(input[input.lastIndex].split(":")[0])+1) {null}
 
+    val inputBetter = mutableListOf<Area>()
     input.forEach {
         val index = Integer.parseInt(it.split(":")[0])
         val value = Integer.parseInt(it.split(":")[1].trim())
 
+        inputBetter.add(Area(index, value))
         parsedInput[index] = value
     }
 
     val time = measureTimeMillis {
-        println("Result ${d.calcPart2(parsedInput)}")
+        println("Result ${d.calcPart2(inputBetter)}")
     }
     println("time in millis: $time")
 

@@ -17,7 +17,7 @@ class Day13Test {
     @Test
     fun `Test example one`() {
 
-        val input = listOf(3, 2, null, null, 4, null, 4)
+        val input = listOf(Area(0, 3), Area(1, 2), Area(4, 4), Area(6, 4))
 
         val result = d.calcPart1(input)
         Assert.assertEquals(24, result)
@@ -30,7 +30,7 @@ class Day13Test {
     @Test
     fun `Test example two`() {
 
-        val input = listOf(3, 2, null, null, 4, null, 4)
+        val input = listOf(Area(0, 3), Area(1, 2), Area(4, 4), Area(6, 4))
 
         val result = d.calcPart2(input)
         Assert.assertEquals(10, result)
