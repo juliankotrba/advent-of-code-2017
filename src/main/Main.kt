@@ -17,7 +17,8 @@ fun main(args: Array<String>) {
     //day10()
     //day11()
     //day12()
-    day13()
+    //day13()
+    day14()
 }
 
 private fun day1() {
@@ -138,23 +139,31 @@ private fun day13() {
     val d = Day13()
     val input = parseInput("src/main/day13/input", ListOfStringParser())
 
-    val parsedInput: MutableList<Int?> = MutableList(Integer.parseInt(input[input.lastIndex].split(":")[0])+1) {null}
-
-    val inputBetter = mutableListOf<Area>()
+    val inputConverted = mutableListOf<Area>()
     input.forEach {
         val index = Integer.parseInt(it.split(":")[0])
         val value = Integer.parseInt(it.split(":")[1].trim())
 
-        inputBetter.add(Area(index, value))
-        parsedInput[index] = value
+        inputConverted.add(Area(index, value))
     }
 
     val time = measureTimeMillis {
-        println("Result ${d.calcPart2(inputBetter)}")
+        println("Result ${d.calcPart2(inputConverted)}")
     }
     println("time in millis: $time")
 
 }
+
+private fun day14() {
+    val d = Day14()
+
+    val time = measureTimeMillis {
+        println("Result ${d.calcPart2("vbqugkhl")}")
+    }
+    println("time in millis: $time")
+}
+
+
 
 interface RowParser<out T> {
     fun parse(rows: List<String>): T
