@@ -18,7 +18,8 @@ fun main(args: Array<String>) {
     //day11()
     //day12()
     //day13()
-    day14()
+    //day14()
+    day15()
 }
 
 private fun day1() {
@@ -159,6 +160,15 @@ private fun day14() {
 
     val time = measureTimeMillis {
         println("Result ${d.calcPart2("vbqugkhl")}")
+    }
+    println("time in millis: $time")
+}
+
+private fun day15() {
+    val d = Day15()
+
+    val time = measureTimeMillis {
+        println("Result ${d.calcPart2(Generator(512, 16807L), Generator(191, 48271L))}")
     }
     println("time in millis: $time")
 }
