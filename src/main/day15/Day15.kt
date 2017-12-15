@@ -7,11 +7,16 @@ import kotlin.coroutines.experimental.buildSequence
 
 class Day15 {
 
+    companion object {
+        const val ITERATION_COUNT_P1 = 40_000_000
+        const val ITERATION_COUNT_P2 = 5_000_000
+    }
+
     fun calcPart1(gA: Generator, gB: Generator): Int {
 
         var matches = 0
 
-        (0 until 40_000_000).forEach {
+        (0 until ITERATION_COUNT_P1).forEach {
             val g1 = (gA.prev.times(gA.factor)).rem(2147483647)
             gA.prev = g1
 
@@ -39,7 +44,7 @@ class Day15 {
 
     private fun calc(generator: Generator, divider: Long) = buildSequence {
         var count = 0L
-        while (count <= 5_000_000) {
+        while (count <= ITERATION_COUNT_P2) {
             val value = (generator.prev.times(generator.factor)).rem(2147483647)
             generator.prev = value
             if (value.rem(divider) == 0L) {
