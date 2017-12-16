@@ -28,7 +28,7 @@ class Day16Test {
         val commands = listOf("s1", "x3/4", "pe/b")
 
         val result = d.calcPart1(programs, commands)
-        Assert.assertEquals("baedc", result)
+        Assert.assertEquals(listOf("b", "a", "e", "d", "c"), result)
     }
 
 }

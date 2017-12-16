@@ -11,13 +11,9 @@ class Day16 {
 
             when {
                 it.startsWith("s") -> {
-
                     val spinSize = Integer.valueOf(it.substring(1, it.length))
 
-                    val newlist = mutableListOf<String>()
-                    newlist.addAll(ps.subList(programs.size.minus(spinSize), ps.size))
-                    newlist.addAll(ps.subList(0, ps.size.minus(spinSize)))
-                    ps = newlist
+                    ps = ps.spin(spinSize)
 
                 }
                 it.startsWith("x") -> {
@@ -37,7 +33,6 @@ class Day16 {
                     ps.swapByUniqueValue(val1, val2)
                 }
             }
-
         }
 
 
@@ -58,7 +53,6 @@ class Day16 {
             ps = this.calcPart1(ps, commands)
         }
 
-        println(ps.joinToString(""))
         return ps.joinToString("")
     }
 
@@ -70,6 +64,14 @@ class Day16 {
 
     private fun MutableList<String>.swapByUniqueValue(v1: String, v2: String) {
         this.swapByIndex(this.indexOf(v1), this.indexOf(v2))
+    }
+
+    private fun MutableList<String>.spin(spinSize: Int): MutableList<String> {
+        val new = mutableListOf<String>()
+        new.addAll(this.subList(this.size.minus(spinSize), this.size))
+        new.addAll(this.subList(0, this.size.minus(spinSize)))
+
+        return new
     }
 
 }
