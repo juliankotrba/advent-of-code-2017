@@ -37,9 +37,7 @@ class Day15 {
         val valuesB: List<Long> = calc(gB, 8).toList()
 
         return valuesA.zip(valuesB)
-                .filter { it.first.and(0xFFFF) == it.second.and(0xFFFF) }
-                .map { 1 }
-                .sum()
+                .count { it.first.and(0xFFFF) == it.second.and(0xFFFF) }
     }
 
     private fun calc(generator: Generator, divider: Long) = buildSequence {
