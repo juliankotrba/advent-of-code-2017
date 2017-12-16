@@ -19,7 +19,8 @@ fun main(args: Array<String>) {
     //day12()
     //day13()
     //day14()
-    day15()
+    //day15()
+    day16()
 }
 
 private fun day1() {
@@ -171,6 +172,19 @@ private fun day15() {
         println("Result ${d.calcPart2(Generator(512, 16807L), Generator(191, 48271L))}")
     }
     println("time in millis: $time")
+}
+
+private fun day16() {
+    val d = Day16()
+
+    val input = parseInput("src/main/day16/input", OneRowAsStringParser()).split(",")
+    val programs = (97 .. 112).map { it.toChar().toString() }.toMutableList()
+
+    val time = measureTimeMillis {
+        println("Result ${d.calcPart2(programs, input)}")
+    }
+    println("time in millis: $time")
+
 }
 
 
