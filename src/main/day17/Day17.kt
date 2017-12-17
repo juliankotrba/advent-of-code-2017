@@ -29,24 +29,17 @@ class Day17 {
 
     fun calcPart2(step: Int): Int {
         var pos = 0
-        var value = 1
         var size = 1
-        var posOfZero = 0
         var valueAfterZero = 1
 
         (1 until ITERATIONS_P2).forEach {
 
             pos = (((pos.plus(step)).rem(size)).plus(1))
 
-            if (pos == posOfZero.plus(1)) {
+            if (pos == 1) {
                 valueAfterZero = it
             }
 
-            if (pos == posOfZero) {
-                posOfZero++
-            }
-
-            value++
             size++
         }
 
