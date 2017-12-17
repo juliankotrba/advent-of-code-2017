@@ -20,7 +20,8 @@ fun main(args: Array<String>) {
     //day13()
     //day14()
     //day15()
-    day16()
+    //day16()
+    day17()
 }
 
 private fun day1() {
@@ -187,6 +188,16 @@ private fun day16() {
 
 }
 
+private fun day17() {
+    val d = Day17()
+
+    val input = 366
+
+    val time = measureTimeMillis {
+        println("Result ${d.calcPart2(input)}")
+    }
+    println("time in millis: $time")
+}
 
 
 interface RowParser<out T> {
