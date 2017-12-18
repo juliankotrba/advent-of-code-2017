@@ -21,7 +21,8 @@ fun main(args: Array<String>) {
     //day14()
     //day15()
     //day16()
-    day17()
+    //day17()
+    day18()
 }
 
 private fun day1() {
@@ -199,6 +200,15 @@ private fun day17() {
     println("time in millis: $time")
 }
 
+private fun day18() {
+    val d = Day18()
+    val input = parseInput("src/main/day18/input", ListOfStringParser())
+
+    val time = measureTimeMillis {
+        println("Result ${d.calcPart2(input)}")
+    }
+    println("time in millis: $time")
+}
 
 interface RowParser<out T> {
     fun parse(rows: List<String>): T
