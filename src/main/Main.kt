@@ -22,7 +22,8 @@ fun main(args: Array<String>) {
     //day15()
     //day16()
     //day17()
-    day18()
+    //day18()
+    day19()
 }
 
 private fun day1() {
@@ -206,6 +207,22 @@ private fun day18() {
 
     val time = measureTimeMillis {
         println("Result ${d.calcPart2(input)}")
+    }
+    println("time in millis: $time")
+}
+
+private fun day19() {
+    val d = Day19()
+    val input = parseInput("src/main/day19/input", ListOfStringParser())
+
+    val realInput = mutableListOf<List<String>>()
+
+    input.forEach { row ->
+        realInput.add(row.map { it.toString() })
+    }
+
+    val time = measureTimeMillis {
+        d.calcPart2(realInput)
     }
     println("time in millis: $time")
 }
