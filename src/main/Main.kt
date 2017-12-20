@@ -23,7 +23,8 @@ fun main(args: Array<String>) {
     //day16()
     //day17()
     //day18()
-    day19()
+    //day19()
+    day20()
 }
 
 private fun day1() {
@@ -225,6 +226,31 @@ private fun day19() {
         d.calcPart2(realInput)
     }
     println("time in millis: $time")
+}
+
+private fun day20() {
+    val d = Day20()
+
+    val file = parseInput("src/main/day20/input", ListOfStringParser())
+
+    val input = mutableListOf<MutableList<Long>>()
+
+    file.forEach {
+
+        val row = mutableListOf<Long>()
+        it.split(" ").forEach { part ->
+            val numbers = part.substring(part.indexOf("<").plus(1), part.indexOf(">"))
+            numbers.split(",").map { num -> row.add(num.toLong()) }
+        }
+        input.add(row)
+    }
+
+
+    val time = measureTimeMillis {
+        println("Result ${d.calcPart2(input)}")
+    }
+    println("time in millis: $time")
+
 }
 
 interface RowParser<out T> {
