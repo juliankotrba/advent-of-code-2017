@@ -25,7 +25,8 @@ fun main(args: Array<String>) {
     //day18()
     //day19()
     //day20()
-    day21()
+    //day21()
+    day22()
 }
 
 private fun day1() {
@@ -260,6 +261,20 @@ private fun day21() {
 
     val time = measureTimeMillis {
         println("Result ${d.calcPart2(input)}")
+    }
+    println("time in millis: $time")
+}
+
+private fun day22() {
+    val d = Day22()
+    val input = parseInput("src/main/day22/input", ListOfStringParser())
+
+    val parsedInput = mutableListOf<MutableList<Char>>()
+    input.forEach { parsedInput.add(it.toCharArray().map { it }.toMutableList()) }
+
+
+    val time = measureTimeMillis {
+        println("Result ${d.calcPart2(parsedInput)}")
     }
     println("time in millis: $time")
 }
