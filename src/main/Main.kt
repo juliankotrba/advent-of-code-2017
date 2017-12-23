@@ -26,7 +26,8 @@ fun main(args: Array<String>) {
     //day19()
     //day20()
     //day21()
-    day22()
+    //day22()
+    day23()
 }
 
 private fun day1() {
@@ -275,6 +276,21 @@ private fun day22() {
 
     val time = measureTimeMillis {
         println("Result ${d.calcPart2(parsedInput)}")
+    }
+    println("time in millis: $time")
+}
+
+private fun day23() {
+    val d = Day23()
+    val input = parseInput("src/main/day23/input", ListOfStringParser())
+
+    var time = measureTimeMillis {
+        println("Result part 1: ${d.calcPart1(input)}")
+    }
+    println("time in millis: $time")
+
+    time = measureTimeMillis {
+        println("Result part 2: ${d.calcPart2()}")
     }
     println("time in millis: $time")
 }
