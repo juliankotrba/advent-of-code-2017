@@ -28,7 +28,8 @@ fun main(args: Array<String>) {
     //day21()
     //day22()
     //day23()
-    day24()
+    //day24()
+    day25()
 }
 
 private fun day1() {
@@ -302,6 +303,32 @@ private fun day24() {
 
     val time = measureTimeMillis {
         println("Result part 1: ${d.calcPart2(input)}")
+    }
+    println("time in millis: $time")
+
+}
+
+private fun day25() {
+    val d = Day25()
+
+    val state1 = State(0, 1, 1, 'B', 0, -1, 'F')
+    val state2 = State(0, 0, 1, 'C', 0, 1, 'D')
+    val state3 = State(0, 1, -1, 'D', 1, 1, 'E')
+    val state4 = State(0, 0, -1, 'E', 0, -1, 'D')
+    val state5 = State(0, 0, 1, 'A', 1, 1, 'C')
+    val state6 = State(0, 1, -1, 'A', 1, 1, 'A')
+
+    val states = mapOf(
+            Pair('A', state1),
+            Pair('B', state2),
+            Pair('C', state3),
+            Pair('D', state4),
+            Pair('E', state5),
+            Pair('F', state6)
+    )
+
+    val time = measureTimeMillis {
+        println("Result part 1: ${d.calcPart1(states, 12994925)}")
     }
     println("time in millis: $time")
 
