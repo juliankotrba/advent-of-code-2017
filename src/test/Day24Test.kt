@@ -1,8 +1,9 @@
 import org.junit.Assert
 import org.junit.Test
 
+
 /**
- * Tests for day 22
+ * Tests for day 24
  * @author Julian Kotrba
  *
  *

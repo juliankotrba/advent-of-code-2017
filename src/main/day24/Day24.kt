@@ -12,12 +12,12 @@ class Day24 {
         val pairs: List<Pair<Int, Int>> = mutableListOf()
         val allPairs = mutableListOf<List<Pair<Int, Int>>>()
 
-        brunch(input, 0, input.filter { it.first == 0 }.toMutableList(), bridgeValues, pairs, allPairs)
+        branch(input, 0, input.filter { it.first == 0 }.toMutableList(), bridgeValues, pairs, allPairs)
 
         return bridgeValues.max()!!
     }
 
-    private fun brunch(input: MutableList<Pair<Int, Int>>, currStrength: Int, branches: MutableList<Pair<Int, Int>>, bridgeValues: MutableList<Int>, pairs: List<Pair<Int, Int>>, allPairs: MutableList<List<Pair<Int, Int>>>) {
+    private fun branch(input: MutableList<Pair<Int, Int>>, currStrength: Int, branches: MutableList<Pair<Int, Int>>, bridgeValues: MutableList<Int>, pairs: List<Pair<Int, Int>>, allPairs: MutableList<List<Pair<Int, Int>>>) {
 
         if (branches.isEmpty()) {
             bridgeValues.add(currStrength)
@@ -45,7 +45,7 @@ class Day24 {
             val newPairs = pairs.toMutableList()
             newPairs.add(it)
 
-            brunch(inputCopy, currStrength.plus(it.first).plus(it.second), newBranches, bridgeValues, newPairs, allPairs)
+            branch(inputCopy, currStrength.plus(it.first).plus(it.second), newBranches, bridgeValues, newPairs, allPairs)
         }
     }
 
@@ -54,7 +54,7 @@ class Day24 {
         val pairs: List<Pair<Int, Int>> = mutableListOf()
         val allPairs = mutableListOf<List<Pair<Int, Int>>>()
 
-        brunch(input, 0, input.filter { it.first == 0 }.toMutableList(), bridgeValues, pairs, allPairs)
+        branch(input, 0, input.filter { it.first == 0 }.toMutableList(), bridgeValues, pairs, allPairs)
 
         val size = allPairs.maxBy { l -> l.size }!!.size
         return allPairs.filter { it.size == size }.map {
