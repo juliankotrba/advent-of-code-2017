@@ -6,7 +6,6 @@ import kotlin.NumberFormatException
 /**
  * Day eighteen of Advent of Code 2017
  *
- * Attention: NO REFACTORING DONE
  * @author Julian Kotrba
  */
 

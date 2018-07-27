@@ -11,11 +11,11 @@ class Day9 {
         var ignoreNext = false
         var isGarbage = false
 
-        input.forEach { c ->
+        for (c in input) {
 
             if (c == '!' && !ignoreNext) {
                 ignoreNext = true
-                return@forEach
+                continue
             }
 
             if (!ignoreNext) {
@@ -42,11 +42,10 @@ class Day9 {
         var isGarbage = false
         var garbageCount = 0
 
-        input.forEach { c ->
-
+        for (c in input) {
             if (c == '!' && !ignoreNext) {
                 ignoreNext = true
-                return@forEach
+                continue
             }
 
             if (!ignoreNext) {

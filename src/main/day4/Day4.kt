@@ -24,10 +24,10 @@ class Day4 {
         val phrases: MutableSet<String> = mutableSetOf()
         var isValid = true
 
-        phrase.forEach {
-            if (!phrases.add(it)) {
+        for (p in phrase) {
+            if (!phrases.add(p)) {
                 isValid = false
-                return@forEach
+                break
             }
         }
 
@@ -38,11 +38,11 @@ class Day4 {
         val phrases: MutableSet<String> = mutableSetOf()
         var isValid = true
 
-        phrase.forEach {
-            val sortedString = String(it.toCharArray().sortedArray())
+        for (p in phrase) {
+            val sortedString = String(p.toCharArray().sortedArray())
             if (!phrases.add(sortedString)) {
                 isValid = false
-                return@forEach
+                break
             }
         }
 

@@ -6,29 +6,29 @@ import kotlin.system.measureTimeMillis
  */
 
 fun main(args: Array<String>) {
-    //day1()
-    //day2()
-    //day4()
-    //day5()
-    //day6()
-    //day7()
-    //day8()
-    //day9()
-    //day10()
-    //day11()
-    //day12()
-    //day13()
-    //day14()
-    //day15()
-    //day16()
-    //day17()
-    //day18()
-    //day19()
-    //day20()
-    //day21()
-    //day22()
-    //day23()
-    //day24()
+    // day1()
+    // day2()
+    // day4()
+    // day5()
+    // day6()
+    // day7()
+    // day8()
+    // day9()
+    // day10()
+    // day11()
+    // day12()
+    // day13()
+    // day14()
+    // day15()
+    // day16()
+    // day17()
+    // day18()
+    // day19()
+    // day20()
+    // day21()
+    // day22()
+    // day23()
+    // day24()
     day25()
 }
 
@@ -334,7 +334,7 @@ private fun day25() {
 
 }
 
-interface RowParser<out T> {
+interface RowParser<T> {
     fun parse(rows: List<String>): T
 }
 
@@ -375,9 +375,9 @@ class ListOfListOfIntParser(private val delimiter: String): RowParser<List<List<
         val input = mutableListOf<List<Int>>()
         rows.forEach {
             val listOfInt = mutableListOf<Int>()
-            it.split(delimiter).forEach({ s ->
+            it.split(delimiter).forEach { s ->
                 listOfInt.add(s.toInt())
-            })
+            }
             input.add(listOfInt)
         }
 
@@ -391,9 +391,9 @@ class ListOfListOfStringParser(private val delimiter: String): RowParser<List<Li
         val input = mutableListOf<List<String>>()
         rows.forEach {
             val listOfInt = mutableListOf<String>()
-            it.split(delimiter).forEach({ s ->
+            it.split(delimiter).forEach { s ->
                 listOfInt.add(s)
-            })
+            }
             input.add(listOfInt)
         }
         return input

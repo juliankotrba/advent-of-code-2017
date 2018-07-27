@@ -1,7 +1,6 @@
 /**
  * Day nineteen of Advent of Code 2017
  *
- * Ugly and not refactored solution..
  * Part 2 is just printing the step counter
  *
  * @author Julian Kotrba

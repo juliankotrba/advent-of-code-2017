@@ -1,7 +1,6 @@
 /**
  * Day twenty-five of Advent of Code 2017
  *
- * NO REFACTORING DONE! :(
  * @author Julian Kotrba
  */
 

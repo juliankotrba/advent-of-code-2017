@@ -51,9 +51,7 @@ class Day7 {
     }
 
     private fun buildTree(root: Node, input: List<String>) {
-
         this.setChildNodes(root, input)
-
     }
 
     private fun rec(node: Node) {
@@ -97,7 +95,7 @@ class Day7 {
                 .forEach {
 
                     println("================================")
-                    println("Need to ajdust node ${it.name} with weight ${it.weight}")
+                    println("Need to adjust node ${it.name} with weight ${it.weight}")
                     println("New weight: ${it.weight.plus(diff)}")
                     println("================================")
 

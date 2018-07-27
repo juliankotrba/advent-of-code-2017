@@ -23,9 +23,9 @@ class Day13 {
         while (!isFound) {
             delay++
 
-            isFound = walkAreasAndStopWhenCaught(input.size, { index ->
+            isFound = walkAreasAndStopWhenCaught(input.size) { index ->
                 input[index].depth.plus(delay).rem((input[index].range.times(2)).minus(2)) == 0
-            })
+            }
         }
 
         return delay

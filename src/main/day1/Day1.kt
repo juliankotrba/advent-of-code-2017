@@ -8,9 +8,9 @@ class Day1 {
     fun calc(input: List<Int>): Int {
         val step = input.size.div(2)
 
-        return input.filterIndexed({ i, v ->
+        return input.filterIndexed { i, v ->
             v == input[compIndex(i, input.size, step)]
-        }).sum()
+        }.sum()
     }
 
     private fun compIndex(currentIndex: Int, listSize: Int, step: Int): Int {

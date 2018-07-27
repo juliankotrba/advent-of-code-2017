@@ -19,11 +19,11 @@ class Day2 {
             val sortedDesc = it.sorted().asReversed()
             var rowResult = 0
 
-            sortedDesc.forEachIndexed({ i, fixedValue ->
+            sortedDesc.forEachIndexed { i, fixedValue ->
                 (i.plus(1) until sortedDesc.size)
                         .filter { fixedValue % sortedDesc[it] == 0 }
                         .forEach { rowResult = fixedValue.div(sortedDesc[it]) }
-            })
+            }
             rowResult
         }.sum()
     }

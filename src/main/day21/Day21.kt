@@ -1,7 +1,6 @@
 /**
  * Day twenty-one of Advent of Code 2017
  *
- * No refactoring or improvements done
  * @author Julian Kotrba
  */
 

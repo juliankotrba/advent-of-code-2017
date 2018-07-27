@@ -1,7 +1,7 @@
 /**
  * Day ten of Advent of Code 2017
  *
- * hangover coding.. please ignore this spaghetti code
+ * hangover coding..
  * @author Julian Kotrba
  */
 
